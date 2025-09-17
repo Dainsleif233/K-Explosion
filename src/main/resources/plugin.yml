@@ -1,0 +1,7 @@
+name: K-Explosion
+version: '1.0'
+main: top.syshub.k_Explosion.K_Explosion
+api-version: '1.21'
+authors: [ Dainsleif ]
+description: Bring K-Explosion Back.
+website: mc.syshub.top
