@@ -42,7 +42,9 @@ public final class K_Explosion extends JavaPlugin implements Listener {
     public void onEntityDamage(EntityDamageEvent e) {
         EntityDamageEvent.DamageCause c = e.getCause();
         @SuppressWarnings("UnstableApiUsage")
-        UUID uuid = Objects.requireNonNull(e.getDamageSource().getDirectEntity()).getUniqueId();
+        Entity s = e.getDamageSource().getDirectEntity();
+        if (s == null) return;
+        UUID uuid = s.getUniqueId();
         if ((c == EntityDamageEvent.DamageCause.ENTITY_EXPLOSION ||
                 c == EntityDamageEvent.DamageCause.BLOCK_EXPLOSION) &&
                 affectedBlocklikeEntities.containsKey(uuid) &&
